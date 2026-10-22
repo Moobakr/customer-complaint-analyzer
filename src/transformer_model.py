@@ -10,7 +10,12 @@ Usage:
 
 import json
 import logging
+import os
 from pathlib import Path
+
+# This project uses PyTorch only. Set this before importing Transformers so
+# Trainer integrations do not load an unrelated TensorFlow/Keras installation.
+os.environ["USE_TF"] = "0"
 
 import numpy as np
 import pandas as pd
